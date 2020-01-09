@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="balloon_content_edge_offset">8dp</dimen>
+    <dimen name="balloon_list_item_margin">6dp</dimen>
+    <dimen name="balloon_text_max_width">200dp</dimen>
+</resources>

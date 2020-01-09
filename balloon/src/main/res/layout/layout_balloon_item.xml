@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:gravity="end"
+    android:baselineAligned="false">
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/balloon_root"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/balloon_list_item_margin"
+        android:layout_marginEnd="@dimen/balloon_list_item_margin"
+        android:layout_marginTop="@dimen/balloon_list_item_margin"
+        android:orientation="horizontal"
+        android:layout_gravity="end"
+        android:background="@drawable/balloon_background"
+        android:elevation="4dp">
+
+        <ImageView
+            android:id="@+id/balloon_icon"
+            android:layout_width="16dp"
+            android:layout_height="17dp"
+            android:layout_marginStart="@dimen/balloon_content_edge_offset"
+            android:layout_marginTop="@dimen/balloon_content_edge_offset"
+            android:layout_marginBottom="@dimen/balloon_content_edge_offset"
+            android:paddingTop="2dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0"
+            android:src="@drawable/ic_notification_24_white"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/balloon_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="@dimen/balloon_text_max_width"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/balloon_icon"
+            app:layout_constraintEnd_toStartOf="@id/balloon_pin"
+            app:layout_constraintHorizontal_bias="0"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginTop="@dimen/balloon_content_edge_offset"
+            app:layout_goneMarginStart="@dimen/balloon_content_edge_offset"
+            app:layout_goneMarginEnd="@dimen/balloon_content_edge_offset"
+            android:textColor="@color/colorDarkBalloonText"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            tools:text="Plugin Update Recommended"/>
+
+        <TextView
+            android:id="@+id/balloon_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="2dp"
+            android:maxWidth="@dimen/balloon_text_max_width"
+            android:textColor="@color/colorDarkBalloonText"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toStartOf="@id/balloon_pin"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@id/balloon_icon"
+            app:layout_constraintTop_toBottomOf="@id/balloon_title"
+            app:layout_goneMarginEnd="@dimen/balloon_content_edge_offset"
+            app:layout_goneMarginStart="@dimen/balloon_content_edge_offset"
+            app:layout_goneMarginTop="@dimen/balloon_content_edge_offset"
+            tools:text="Android Gradle Plugin is ready to update" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="@dimen/balloon_content_edge_offset"
+            app:layout_constraintStart_toStartOf="@id/balloon_message"
+            app:layout_constraintEnd_toEndOf="@id/balloon_message"
+            app:layout_constraintTop_toBottomOf="@id/balloon_message" />
+
+        <Space
+            android:id="@+id/action_negative_margin"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/balloon_content_edge_offset"
+            app:layout_constraintStart_toStartOf="@id/balloon_message"
+            app:layout_constraintEnd_toEndOf="@id/balloon_message"
+            app:layout_constraintBottom_toBottomOf="@+id/balloon_message" />
+
+        <TextView
+            android:id="@+id/balloon_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/balloon_content_edge_offset"
+            app:layout_constraintStart_toEndOf="@id/balloon_icon"
+            app:layout_constraintEnd_toStartOf="@id/balloon_pin"
+            app:layout_constraintTop_toTopOf="@id/action_negative_margin"
+            app:layout_constraintHorizontal_bias="1"
+            android:layout_marginBottom="@dimen/balloon_content_edge_offset"
+            android:textColor="@color/action_label_color_selector"
+            android:background="@drawable/label_button_background"
+            android:visibility="gone"
+            tools:visibility="visible"
+            tools:text="Update"/>
+
+        <ImageView
+            android:id="@+id/balloon_pin"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:tint="@color/colorDarkBalloonText"
+            android:src="@drawable/ic_pin_24_white"
+            android:rotation="30"
+            android:visibility="gone"
+            tools:visibility="visible"
+            tools:ignore="ContentDescription" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

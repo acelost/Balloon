@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/colorDarkBalloonRipple">
+
+    <item android:id="@android:id/mask">
+        <shape>
+            <solid android:color="@android:color/black"/>
+            <corners android:radius="3dp"/>
+        </shape>
+    </item>
+
+    <item>
+        <shape>
+            <solid android:color="@color/colorDarkBalloonBackground"/>
+            <corners android:radius="3dp"/>
+        </shape>
+    </item>
+
+</ripple>

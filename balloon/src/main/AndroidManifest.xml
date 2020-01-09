@@ -1,0 +1,12 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.acelost.balloon">
+
+    <application>
+        <provider
+            android:authorities="${applicationId}.BalloonInitProvider"
+            android:name="com.acelost.balloon.provider.BalloonInitProvider"
+            android:exported="false"
+            android:enabled="true"/>
+    </application>
+
+</manifest>
