@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.acelost.balloon.Balloon;
 import com.acelost.balloon.icon.BalloonIcon;
@@ -14,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        findViewById(R.id.add_balloon_btn).setVisibility(View.GONE);
         findViewById(R.id.add_balloon_btn).setOnClickListener(new View.OnClickListener() {
             private int i = 0;
             @Override
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
                 i++;
             }
         });
+        findViewById(R.id.remove_balloon_btn).setVisibility(View.GONE);
         findViewById(R.id.remove_balloon_btn).setOnClickListener(new View.OnClickListener() {
             private int i = 0;
             @Override
@@ -37,7 +40,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initSamples() {
-        Balloon.make("ShortText #1")
+        Balloon.make("My balloon text")
+                .icon(BalloonIcon.info())
+                .duration(5000)
+                .action("Toast", () -> {
+                    Toast.makeText(this, "My toast message", Toast.LENGTH_SHORT).show();
+                })
+                .show();
+        /*Balloon.make("ShortText #1")
                 //.duration(2000)
                 .show();
         Balloon.make("ShortText #2")
@@ -61,6 +71,6 @@ public class MainActivity extends AppCompatActivity {
                 .action("Crash", () -> {
                     //throw new RuntimeException();
                 })
-                .show();
+                .show();*/
     }
 }
