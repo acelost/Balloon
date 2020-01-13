@@ -19,7 +19,7 @@ Balloon.make("My balloon text")
 ## How to integrate
 
 ```groovy
-implementation 'com.acelost.balloon:balloon:0.0.1'
+implementation 'com.acelost.balloon:balloon:0.0.2'
 ```
 
 ## License

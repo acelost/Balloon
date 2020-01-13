@@ -40,14 +40,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initSamples() {
-        Balloon.make("My balloon text")
+        /*Balloon.make("My balloon text")
                 .icon(BalloonIcon.info())
                 .duration(5000)
                 .action("Toast", () -> {
                     Toast.makeText(this, "My toast message", Toast.LENGTH_SHORT).show();
                 })
-                .show();
-        /*Balloon.make("ShortText #1")
+                .show();*/
+        Balloon.make("ShortText #1")
                 //.duration(2000)
                 .show();
         Balloon.make("ShortText #2")
@@ -71,6 +71,6 @@ public class MainActivity extends AppCompatActivity {
                 .action("Crash", () -> {
                     //throw new RuntimeException();
                 })
-                .show();*/
+                .show();
     }
 }

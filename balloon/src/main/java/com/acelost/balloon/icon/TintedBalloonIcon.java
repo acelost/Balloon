@@ -26,4 +26,23 @@ public abstract class TintedBalloonIcon extends BalloonIcon {
             imageView.setImageTintList(null);
         }
     }
+
+    @Override
+    public boolean equals(final Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        final TintedBalloonIcon that = (TintedBalloonIcon) o;
+
+        return tintColor != null ? tintColor.equals(that.tintColor) : that.tintColor == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return tintColor != null ? tintColor.hashCode() : 0;
+    }
 }

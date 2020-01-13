@@ -24,4 +24,22 @@ public abstract class BalloonAction {
         return new RunnableBalloonAction(label, runnable);
     }
 
+    @Override
+    public boolean equals(final Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        final BalloonAction that = (BalloonAction) o;
+
+        return label.equals(that.label);
+    }
+
+    @Override
+    public int hashCode() {
+        return label.hashCode();
+    }
 }
