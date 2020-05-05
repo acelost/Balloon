@@ -5,7 +5,7 @@ publish {
 
     def groupProjectID = 'com.acelost.balloon'
     def artifactProjectID = 'balloon'
-    def publishVersionID = '0.0.2'
+    def publishVersionID = '0.0.3'
 
     userOrg = 'acelost'
     repoName = 'Balloon'

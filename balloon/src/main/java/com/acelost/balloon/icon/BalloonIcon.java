@@ -56,4 +56,26 @@ public abstract class BalloonIcon {
         return fromResource(R.drawable.ic_notification_24_white, color);
     }
 
+    @NonNull
+    public static BalloonIcon check() {
+        return check(null);
+    }
+
+    @NonNull
+    public static BalloonIcon check(@Nullable final Integer tintColor) {
+        final int color = tintColor != null ? tintColor : Color.rgb(79, 192, 37);
+        return fromResource(R.drawable.ic_check_24_white, color);
+    }
+
+    @NonNull
+    public static BalloonIcon cancel() {
+        return cancel(null);
+    }
+
+    @NonNull
+    public static BalloonIcon cancel(@Nullable final Integer tintColor) {
+        final int color = tintColor != null ? tintColor : Color.rgb(225, 2, 2);
+        return fromResource(R.drawable.ic_cancel_24_white, color);
+    }
+
 }
